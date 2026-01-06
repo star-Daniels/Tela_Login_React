@@ -2,6 +2,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../services/firebase";
 import { useNavigate, Link } from "react-router-dom";
+import "./style/Login.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -14,6 +15,11 @@ function Login() {
     e.preventDefault();
     setError("");
 
+    if (!email || !password) {
+      setError("Preencha todos os campos");
+      return;
+    }
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/dashboard");
@@ -24,32 +30,51 @@ function Login() {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="login-container">
 
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
 
-        <input
-          type="password"
-          placeholder="Senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      <div className="login-container-left">
+        <div className="login-container-forms">
+          <h1>Entrar</h1>
 
-        <button type="submit">Entrar</button>
-      </form>
+          <form onSubmit={handleLogin}>
+            <div className="login-layout-input-forms">
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-      {error && <p>{error}</p>}
+              <input
+                type="password"
+                placeholder="Senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
 
-      <p>
-        Não tem conta? <Link to="/register">Criar conta</Link>
-      </p>
+            <div className="login-btn-register">
+              <button type="submit">Entrar</button>
+            </div>
+          </form>
+
+          {error && <p className="login-error">{error}</p>}
+        </div>
+      </div>
+
+      <div className="login-info-section">
+        <h2>BEM-VINDO DE VOLTA!</h2>
+        <p>Que bom ver você novamente.</p>
+        <p>Entre na sua conta para continuar.</p>
+
+        <div className="login-layout-btn-sign-in">
+          <Link to="/register">
+            <button className="login-btn-sign-in">Criar conta</button>
+          </Link>
+        </div>
+      </div>
+      
     </div>
   );
 }
