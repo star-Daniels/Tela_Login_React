@@ -1,4 +1,4 @@
-# 🚀 Tela de Login em React + Firebase
+#  Tela de Login em React + Firebase
 
 Este projeto é uma aplicação de **Login e Registro de usuários** desenvolvida em **React**, integrada com o **Firebase** para autenticação, banco de dados e hospedagem.
 
@@ -6,18 +6,18 @@ O sistema permite criar contas, fazer login e exibir um **dashboard personalizad
 
 ---
 
-## 🧰 Tecnologias utilizadas
+##  Tecnologias utilizadas
 
-- ⚛️ React  
-- 🔥 Firebase Authentication  
-- 🗄️ Firebase Firestore  
-- 🌐 Firebase Hosting  
-- 🧭 React Router DOM  
-- 🎨 CSS puro
+-  React  
+-  Firebase Authentication  
+-  Firebase Firestore  
+-  Firebase Hosting  
+-  React Router DOM  
+-  CSS puro
 
 ---
 
-## 🔐 Funcionalidades
+##  Funcionalidades
 
 - Cadastro de usuário com email e senha  
 - Login de usuário  
@@ -29,17 +29,17 @@ O sistema permite criar contas, fazer login e exibir um **dashboard personalizad
 
 ---
 
-## 🗄️ Firebase (integrações)
+##  Firebase (integrações)
 
 O projeto está conectado aos seguintes serviços do Firebase:
 
-- ✅ **Authentication** → criação e login de usuários  
-- ✅ **Firestore Database** → armazenamento de dados dos usuários  
-- ✅ **Hosting** → publicação do site
+-  **Authentication** → criação e login de usuários  
+-  **Firestore Database** → armazenamento de dados dos usuários  
+-  **Hosting** → publicação do site
 
 ---
 
-## 🌍 Projeto online
+##  Projeto online
 
 O site está hospedado no Firebase Hosting:
 
